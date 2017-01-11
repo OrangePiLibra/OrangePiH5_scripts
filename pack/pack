@@ -45,7 +45,7 @@ ARCH=arm64
 ROOT_DIR=`pwd`
 TOOLS_DIR="${ROOT_DIR}/pctools/linux"
 FILE=OrangePi
-UBOOT=${ROOT}/u-boot
+UBOOT=${ROOT}/uboot
 
 export PATH=${TOOLS_DIR}/mod_update:${TOOLS_DIR}/fsbuild200:$PATH
 

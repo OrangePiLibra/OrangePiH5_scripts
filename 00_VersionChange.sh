@@ -13,7 +13,7 @@ set -e
 change_file=(
 external/sys_config.fex
 kernel/.config
-u-boot/include/configs/sun50iw2p1.h
+uboot/include/configs/sun50iw2p1.h
 )
 
 ## The absolute path of dirent.
@@ -92,7 +92,7 @@ function change_version()
         if [ ! -d ${BUFFER}/${CURRENT_VERSION}_${name} ]; then
             cp -rf ${BUFFER}/${OLD_VERSION}_${name} ${BUFFER}/${CURRENT_VERSION}_${name}
         fi
-        mv ${BUFFER}/${CURRENT_VERSION}_${name} $ROOT/$dirent
+        cp -rfa ${BUFFER}/${CURRENT_VERSION}_${name} $ROOT/$dirent
     done
 }
 

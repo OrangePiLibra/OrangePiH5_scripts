@@ -2,8 +2,9 @@
 set -e
 ##########################################
 ##
-##
 ## Build H5 Linux
+## 
+## Maintainer: Buddy <buddy.zhang@aliyun.com>
 ##########################################
 export ROOT=`pwd`
 SCRIPTS=$ROOT/scripts
@@ -90,6 +91,10 @@ ROOTFS_check()
 	done
 }
 
+if [ ! -d $ROOT/output ]; then
+    mkdir -p $ROOT/output
+fi
+
 MENUSTR="Welcome to OrangePi Build System. Pls choose Platform."
 ##########################################
 OPTION=$(whiptail --title "OrangePi Build System" \
@@ -140,10 +145,14 @@ done
 echo $PASSWD | sudo ls &> /dev/null 2>&1
 
 ## Check cross tools
-if [ ! -d $ROOT/toolchain -o ! -d $ROOT/toolchain/gcc-linaro-aarch/gcc-linaro/arm-linux-gnueabi ]; then
+if [ ! -d $ROOT/toolchain/gcc-linaro-aarch -o ! -d $ROOT/toolchain/gcc-linaro-aarch/gcc-linaro/arm-linux-gnueabi ]; then
 	cd $SCRIPTS
 	./install_toolchain.sh
 	cd -
+fi
+
+if [ ! -d $ROOT/output ]; then
+    mkdir -p $ROOT/output
 fi
 
 ## prepare development tools

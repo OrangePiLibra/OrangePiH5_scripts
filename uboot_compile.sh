@@ -14,7 +14,7 @@ if [ -z $PLATFORM ]; then
 	PLATFORM="OrangePiH5_PC2"
 fi
 # Uboot direct
-UBOOT=$ROOT/u-boot
+UBOOT=$ROOT/uboot
 # Compile Toolchain
 TOOLS=$ROOT/toolchain/gcc-linaro-aarch/gcc-linaro/bin/arm-linux-gnueabihf-
 

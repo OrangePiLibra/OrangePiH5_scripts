@@ -10,10 +10,10 @@ if [ -z $TOOT ]; then
 fi
 
 TOOLS="$ROOT/toolchain"
-TOOLTARXZ="$ROOT/external/toolchain_tar/toolchain"
-TOOLTAR="$ROOT/external/toolchain.tar.gz"
-UBOOTTAR="$ROOT/external/uboot-tools.tar.gz"
-UBOOTTARXZ="$ROOT/external/toolchain_tar/u-boot-compile-tools"
+TOOLTARXZ="$ROOT/toolchain/toolchain_tar/toolchain"
+TOOLTAR="$ROOT/toolchain/toolchain.tar.gz"
+UBOOTTAR="$ROOT/toolchain/uboot-tools.tar.gz"
+UBOOTTARXZ="$ROOT/toolchain/toolchain_tar/u-boot-compile-tools"
 UBOOTS="$TOOLS/gcc-linaro-aarch"
 
 whiptail --title "OrangePi Build System" --msgbox "Installing Cross-Tools. Pls wait a mount." --ok-button Continue 10 40 0
@@ -23,9 +23,11 @@ if [ ! -d $TOOLS/gcc-linaro-aarch ]; then
 	echo -e "\e[1;31m Uncompress toolchain.. \e[0m"
 	cat ${TOOLTARXZ}* > ${TOOLTAR}
 
-	tar xzvf $TOOLTAR -C $ROOT 
+	tar xzvf $TOOLTAR -C $TOOLS 
 	rm -rf $TOOLTAR 
-	rm -rf $TOOLS/gcc-linaro-aarch/gcc-linaro
+    mv $TOOLS/toolchain/gcc-linaro-aarch $TOOLS
+    rm -rf $TOOLS/toolchain
+#	rm -rf $TOOLS/gcc-linaro-aarch/gcc-linaro
 fi
 
 if [ -d $ROOT/toolchain/gcc-linaro-aarch/gcc-linaro/arm-linux-gnueabihf ]; then
