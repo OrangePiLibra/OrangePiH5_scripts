@@ -14,7 +14,7 @@ else
 	PLATFORM=$1
 fi
 
-VERSION=$ROOT/output/version
+VERSION=$ROOT/scripts/version
 # Create Version state file
 if [ ! -f $VERSION ]; then
 	echo "$PLATFORM" > $VERSION
