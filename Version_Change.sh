@@ -20,6 +20,7 @@ if [ ! -f $VERSION ]; then
 	echo "$PLATFORM" > $VERSION
 fi
 OLD_PLATFORM=`cat $VERSION`
+./Version_check.sh "$OLD_PLATFORM"
 
 if [ $PLATFORM = $OLD_PLATFORM ]; then
 	exit 0

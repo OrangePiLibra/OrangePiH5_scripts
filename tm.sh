@@ -96,27 +96,7 @@ function change_version()
     done
 }
 
-# Backup file
-function BackupFile()
-{
-    # Backup kernel/.config
-    cp $ROOT/external/BUFFER/FILE/OrangePiH5_PC2_.config $ROOT/kernel/arch/arm64/configs/OrangePiH5_PC2_defconfig   
-    cp $ROOT/external/BUFFER/FILE/OrangePiH5_Prima_.config $ROOT/kernel/arch/arm64/configs/OrangePiH5_Prima_defconfig   
-    cp $ROOT/external/BUFFER/FILE/OrangePiH5_Zero_Plus2_.config $ROOT/kernel/arch/arm64/configs/OrangePiH5_Zero_Plus2_defconfig
-    
-    # Backup uboot/../config
-    cp $ROOT/external/BUFFER/FILE/OrangePiH5_PC2_sun50iw2p1.h $ROOT/uboot/include/configs/OrangePiH5_PC2_sun50iw2p1.h
-    cp $ROOT/external/BUFFER/FILE/OrangePiH5_Prima_sun50iw2p1.h $ROOT/uboot/include/configs/OrangePiH5_Prima_sun50iw2p1.h
-    cp $ROOT/external/BUFFER/FILE/OrangePiH5_Zero_Plus2_sun50iw2p1.h $ROOT/uboot/include/configs/OrangePiH5_Zero_Plus2_sun50iw2p1.h
-
-    # Backup sys_config.fex
-    cp $ROOT/external/BUFFER/FILE/OrangePiH5_PC2_sys_config.fex $ROOT/external/sys_config/OrangePiH5_PC2_sys_config.fex
-    cp $ROOT/external/BUFFER/FILE/OrangePiH5_Prima_sys_config.fex $ROOT/external/sys_config/OrangePiH5_Prima_sys_config.fex
-    cp $ROOT/external/BUFFER/FILE/OrangePiH5_Zero_Plus2_sys_config.fex $ROOT/external/sys_config/OrangePiH5_Zero_Plus2_sys_config.fex
-}
-
 # To-do 
 source_check
 argument_check
 change_version
-BackupFile
