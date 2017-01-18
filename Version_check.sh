@@ -22,11 +22,11 @@ function CopyFile()
     fi 
 
     if [ ! -f $ROOT/uboot/include/configs/sun50iw2p1.h ]; then
-        $ROOT/uboot/include/configs/${CURRENT_VERSION}_sun50iw2p1.h $ROOT/uboot/include/configs/sun50iw2p1.h
+        cp $ROOT/uboot/include/configs/${CURRENT_VERSION}_sun50iw2p1.h $ROOT/uboot/include/configs/sun50iw2p1.h
     fi
 
     if [ ! -f $ROOT/external/sys_config.fex ]; then
-        $ROOT/external/sys_config/${CURRENT_VERSION}_sys_config.fex $ROOT/external/sys_config.fex
+        cp $ROOT/external/sys_config/${CURRENT_VERSION}_sys_config.fex $ROOT/external/sys_config.fex
     fi
 }
 
