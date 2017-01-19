@@ -24,6 +24,11 @@ fi
 if [ -z $BUILD_MODULE ]; then
 	BUILD_MODULE="0"
 fi
+# module option
+if [ -z $BUILD_UIMAGE ]; then
+	BUILD_UIMAGE="0"
+fi
+
 # Knernel Direct
 LINUX=$ROOT/kernel
 # Compile Toolchain
@@ -93,6 +98,9 @@ if [ $BUILD_KERNEL = "1" ]; then
 	# dtc -I dtb -O dts -o target_file.dts source_file.dtb
 	########
 	# Update DTB with uboot
+fi
+
+if [ $BUILD_UIMAGE = "1" ]; then
 	echo -e "\e[1;31m Cover sys_config.fex to DTS \e[0m"
 	cd $ROOT/scripts/pack/
 	./pack
