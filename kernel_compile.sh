@@ -30,7 +30,7 @@ LINUX=$ROOT/kernel
 TOOLS=$ROOT/toolchain/gcc-linaro-aarch/bin/aarch64-linux-gnu-
 # OUTPUT DIRECT
 BUILD=$ROOT/output
-CORES=$((`cat /proc/cpuinfo | grep processor | wc -l` - 1))
+CORES=1
 
 if [ ! -d $BUILD ]; then
 	mkdir -p $BUILD
